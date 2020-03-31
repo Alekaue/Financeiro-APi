@@ -7,7 +7,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+<<<<<<< HEAD
 import java.util.Optional;
+=======
+>>>>>>> 5463513f823666261da7fd0e31bd8d6ee6919c4e
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -111,7 +114,11 @@ public class LancamentoService {
 	}
 	
 	public Lancamento salvar(Lancamento lancamento) {
+<<<<<<< HEAD
 		Pessoa pessoa = pessoaRepository.getOne(lancamento.getPessoa().getCodigo());
+=======
+		Pessoa pessoa = pessoaRepository.findOne(lancamento.getPessoa().getCodigo());
+>>>>>>> 5463513f823666261da7fd0e31bd8d6ee6919c4e
 		if(pessoa == null || pessoa.isInativo()) {
 			throw new PessoaInexistenteOuInativoException();
 		}
@@ -149,7 +156,11 @@ public class LancamentoService {
 	private void validarPessoa(Lancamento lancamento) {
 		Pessoa pessoa = null;
 		if(lancamento.getPessoa().getCodigo() != null) {
+<<<<<<< HEAD
 			pessoa = pessoaRepository.getOne(lancamento.getPessoa().getCodigo());
+=======
+			pessoa = pessoaRepository.findOne(lancamento.getPessoa().getCodigo());
+>>>>>>> 5463513f823666261da7fd0e31bd8d6ee6919c4e
 		}
 		
 		if(pessoa == null || pessoa.isInativo()) {
@@ -158,11 +169,19 @@ public class LancamentoService {
 	}
 
 	private Lancamento buscarLancamentoExistente(Long codigo) {
+<<<<<<< HEAD
 		Optional<Lancamento> lancamentoSalvo = lancamentoRepository.findById(codigo);
 		if(!lancamentoSalvo.isPresent()) {
 			throw new IllegalArgumentException();
 		}
 		return lancamentoSalvo.get();
+=======
+		Lancamento lancamentoSalvo = lancamentoRepository.findOne(codigo);
+		if(lancamentoSalvo == null) {
+			throw new IllegalArgumentException();
+		}
+		return lancamentoSalvo;
+>>>>>>> 5463513f823666261da7fd0e31bd8d6ee6919c4e
 	}
 	
 	

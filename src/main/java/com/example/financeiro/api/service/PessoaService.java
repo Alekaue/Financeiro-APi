@@ -1,7 +1,10 @@
 package com.example.financeiro.api.service;
 
+<<<<<<< HEAD
 import java.util.Optional;
 
+=======
+>>>>>>> 5463513f823666261da7fd0e31bd8d6ee6919c4e
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -40,12 +43,21 @@ public class PessoaService {
 	}
 	
 	public Pessoa buscaPessoaPeloCodigo(Long codigo) {
+<<<<<<< HEAD
 		Optional<Pessoa> pessoaSalva = pessoaRepository.findById(codigo);
 		
 		if (!pessoaSalva.isPresent()) {	
 			throw new EmptyResultDataAccessException(1);
 		}
 		return pessoaSalva.get();
+=======
+		Pessoa pessoaSalva = pessoaRepository.findOne(codigo);
+		
+		if (pessoaSalva == null) {	
+			throw new EmptyResultDataAccessException(1);
+		}
+		return pessoaSalva;
+>>>>>>> 5463513f823666261da7fd0e31bd8d6ee6919c4e
 	}
 
 }
