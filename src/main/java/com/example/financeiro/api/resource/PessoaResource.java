@@ -1,10 +1,7 @@
 package com.example.financeiro.api.resource;
 
-<<<<<<< HEAD
 import java.util.Optional;
 
-=======
->>>>>>> 5463513f823666261da7fd0e31bd8d6ee6919c4e
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
@@ -57,24 +54,15 @@ public class PessoaResource {
 	@GetMapping("/{codigo}")
 	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_CATEGORIA') and #oauth2.hasScope('read')")
 	public ResponseEntity<Pessoa> buscaPeloCodigo(@PathVariable Long codigo){
-<<<<<<< HEAD
 		Optional<Pessoa> pessoa = pessoaRepository.findById(codigo);
 		 return pessoa.isPresent() ? ResponseEntity.ok(pessoa.get()) : ResponseEntity.notFound().build();
-=======
-		Pessoa pessoa = pessoaRepository.findOne(codigo);
-		 return pessoa != null ? ResponseEntity.ok(pessoa) : ResponseEntity.notFound().build();
->>>>>>> 5463513f823666261da7fd0e31bd8d6ee6919c4e
 	}
 	
 	@DeleteMapping("/{codigo}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	@PreAuthorize("hasAuthority('ROLE_REMOVER_LANCAMENTO') and #oauth2.hasScope('write')")
 	public void remover(@PathVariable Long codigo) {
-<<<<<<< HEAD
 		pessoaRepository.deleteById(codigo);
-=======
-		pessoaRepository.delete(codigo);
->>>>>>> 5463513f823666261da7fd0e31bd8d6ee6919c4e
 	}
 	
 	@PutMapping("/{codigo}")

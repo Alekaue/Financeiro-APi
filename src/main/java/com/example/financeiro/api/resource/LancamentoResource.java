@@ -4,10 +4,7 @@ package com.example.financeiro.api.resource;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
-<<<<<<< HEAD
 import java.util.Optional;
-=======
->>>>>>> 5463513f823666261da7fd0e31bd8d6ee6919c4e
 
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
@@ -121,13 +118,8 @@ public class LancamentoResource {
 	@GetMapping("/{codigo}")
 	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_CATEGORIA') and #oauth2.hasScope('read')")
 	public ResponseEntity<Lancamento> buscarPeloCodigo(@PathVariable Long codigo) {
-<<<<<<< HEAD
 		Optional<Lancamento> lancamento = lancamentoRepository.findById(codigo);
 		return lancamento.isPresent() ? ResponseEntity.ok(lancamento.get()) : ResponseEntity.notFound().build();
-=======
-		Lancamento lancamento = lancamentoRepository.findOne(codigo);
-		return lancamento != null ? ResponseEntity.ok(lancamento) : ResponseEntity.notFound().build();
->>>>>>> 5463513f823666261da7fd0e31bd8d6ee6919c4e
 	}
 	
 	@PostMapping
@@ -150,11 +142,7 @@ public class LancamentoResource {
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	@PreAuthorize("hasAuthority('ROLE_REMOVER_LANCAMENTO') and #oauth2.hasScope('write')")
 	public void remover(@PathVariable Long codigo) {
-<<<<<<< HEAD
 		lancamentoRepository.deleteById(codigo);
-=======
-		lancamentoRepository.delete(codigo);
->>>>>>> 5463513f823666261da7fd0e31bd8d6ee6919c4e
 	}
 	
 	@PutMapping("/{codigo}")

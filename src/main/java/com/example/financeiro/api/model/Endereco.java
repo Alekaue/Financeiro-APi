@@ -1,11 +1,8 @@
 package com.example.financeiro.api.model;
 
 import javax.persistence.Embeddable;
-<<<<<<< HEAD
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-=======
->>>>>>> 5463513f823666261da7fd0e31bd8d6ee6919c4e
 
 @Embeddable
 public class Endereco {
@@ -15,16 +12,11 @@ public class Endereco {
 	private String complemento;
 	private String bairro;
 	private String cep;
-<<<<<<< HEAD
 	
 	@ManyToOne
 	@JoinColumn(name = "codigo_cidade")
 	private Cidade cidade;
 	
-=======
-	private String cidade;
-	private String estado;
->>>>>>> 5463513f823666261da7fd0e31bd8d6ee6919c4e
 
 	public String getLogradouro() {
 		return logradouro;
@@ -66,7 +58,6 @@ public class Endereco {
 		this.cep = cep;
 	}
 
-<<<<<<< HEAD
 	public Cidade getCidade() {
 		return cidade;
 	}
@@ -75,22 +66,4 @@ public class Endereco {
 		this.cidade = cidade;
 	}
 
-=======
-	public String getCidade() {
-		return cidade;
-	}
-
-	public void setCidade(String cidade) {
-		this.cidade = cidade;
-	}
-
-	public String getEstado() {
-		return estado;
-	}
-
-	public void setEstado(String estado) {
-		this.estado = estado;
-	}
-
->>>>>>> 5463513f823666261da7fd0e31bd8d6ee6919c4e
 }
